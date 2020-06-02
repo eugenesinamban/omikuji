@@ -10,7 +10,7 @@ $switch = isset($_POST['hit']);
 $message = $omikuji->hit($switch);
 
 $viewVars = [
-    'message' => $message
+    'message' => $message,
 ];
 
 echo $twig->render('index.html.twig', $viewVars);
