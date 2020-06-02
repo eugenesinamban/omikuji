@@ -2,12 +2,11 @@
 require_once __DIR__ . "/bootstrap.php";
 require_once __DIR__ . "/model/Omikuji.php";
 
-$omikuji = new Omikuji();
+$request = $_POST['hit'] ?? null;
 
-$switch = isset($_POST['hit']);
+$omikuji = new Omikuji($request);
 
-
-$message = $omikuji->hit($switch);
+$message = $omikuji->hit();
 
 $viewVars = [
     'message' => $message,
